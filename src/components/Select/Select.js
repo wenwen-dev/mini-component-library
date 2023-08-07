@@ -60,14 +60,6 @@ const PresentationalBit = styled.div`
   ${NativeSelect}:hover + & {
     color: ${COLORS.black};
   }
-
-
-  /* appearance: none; */
-
-  &:focus {
-    /* border: 2px solid hsla(218, 57%, 53%, 1); */
-    outline: 2px solid hsla(218, 57%, 53%, 1);
-  }
 `;
 
 const IconWrapper = styled.div`
