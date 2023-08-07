@@ -15,11 +15,22 @@
   - 'VisuallyHidden' is a safety measure to ensure the value of progress is read to the user (in case progress bar is not identified)
 
 - Misc learnings
-  - A great way to prevent content seeping through a rounded box (container with smaller border radius): set overflow!
+  - 'Trimmed Corners': A great way to prevent content seeping through a rounded box (container with smaller border radius): set overflow!
   - width of bar should be dynamic - so can be put into any container and looks good
   - Add error reminder when accessing an object, in case it's nullish, so that I can quickly pinpoint the problem - saves lots of time
   - Adding a BarWrapper is a solution for 'large' in which its padding prevents the overflow setting to truncate the radius. Note how adding a layer can solve such problem, essentially taking up the Wrapper's responsibility to have a border radius and sets hidden overflow.
-  - When there's padding in between two rounded boxes, if they have the same border radius, the distance between corners would be larger than between sides (one has higher height). Adjusting the outer box's radius (decreasing) can make it prettier.
+  - 'concentric circles': When there's padding in between two rounded boxes, if they have the same border radius, the distance between corners would be larger than between sides (one has higher height). Adjusting the outer box's radius (decreasing) can make it prettier.
+
+### Select
+
+- 'PresentationalBit' component: finding a middle ground between using the native html select element and reinventing a select from the ground up - using select to ensure mobile and accessibility experience while having complete control over how (the actual select presented) it looks (e.g. icon looks, width, shadows...). **This can also be applied on other hard-to-style form control elements.**
+
+  - Setting a relatively positioned wrapper which wraps the native select (absolutely positioned) and then the presentational div.
+  - Wrapping the Icon around an IconWrapper, allowing it to position absolutely too (or use Flexbox). Note need to
+
+- Getting outline to display: when we hide the native select, we hide its focus ring as well. The selector instead is to select the presentational bit _when_ the native select is in focus, using '+' (adjacent sibling selector)
+
+---
 
 In this workshop, we'll build 3 components from scratch:
 
