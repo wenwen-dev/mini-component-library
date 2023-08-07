@@ -1,5 +1,26 @@
 # Component Library Workshop
 
+## My reflections
+
+### Progress Bar
+
+- Choosing const STYLES over composition: I used variations built on top of BaseBar at first. This is a less good choice than creating a const STYLES and passing styles for different sizes because
+
+  - The major variation is height, and for 'large' there's a padding, nothing else. Composition is a better choice when there's vastly different looks
+  - I was limited by the belief that const STYLES can only store styles to be applied onto the same component. That's not true. The only divide it has is small/medium/size, and upon each an object is returned with styles that ANY component can access using 'styles.padding' ('object[CSSProperty]')
+
+- Accessibility for progress bar
+
+  - Using 'role' and aria values to allow screen readers know what it is and how best to read it
+  - 'VisuallyHidden' is a safety measure to ensure the value of progress is read to the user (in case progress bar is not identified)
+
+- Misc learnings
+  - A great way to prevent content seeping through a rounded box (container with smaller border radius): set overflow!
+  - width of bar should be dynamic - so can be put into any container and looks good
+  - Add error reminder when accessing an object, in case it's nullish, so that I can quickly pinpoint the problem - saves lots of time
+  - Adding a BarWrapper is a solution for 'large' in which its padding prevents the overflow setting to truncate the radius. Note how adding a layer can solve such problem, essentially taking up the Wrapper's responsibility to have a border radius and sets hidden overflow.
+  - When there's padding in between two rounded boxes, if they have the same border radius, the distance between corners would be larger than between sides (one has higher height). Adjusting the outer box's radius (decreasing) can make it prettier.
+
 In this workshop, we'll build 3 components from scratch:
 
 1. ProgressBar
