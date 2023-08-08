@@ -30,6 +30,12 @@
 
 - Getting outline to display: when we hide the native select, we hide its focus ring as well. The selector instead is to select the presentational bit _when_ the native select is in focus, using '+' (adjacent sibling selector)
 
+### IconInput
+
+- Good idea to check details of Figma files before deciding on the structure. Having noticed that the :focus outline wraps entire component would have helped me decide using fewer wrappers around the text input.
+- Use 'rem' on heights of text inputs is good for accessibility
+- Making the outer wrapper a 'label' is a way with much shorter code to enable upon clicking on the icon (or anywhere in the bar area) will focus the input. It's essentially wrapping an input inside its label.
+
 ---
 
 In this workshop, we'll build 3 components from scratch:
